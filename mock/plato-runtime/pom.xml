@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>io.yupiik.poc</groupId>
+        <artifactId>mock</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <groupId>io.yupiik.poc.mock</groupId>
+    <artifactId>plato-runtime</artifactId>
+    <packaging>bundle</packaging>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>4.1.0</version>
+                <inherited>true</inherited>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>platoRuntime</Bundle-SymbolicName>
+                        <Export-Package>
+                            com.netflix.archaius
+                        </Export-Package>
+                        <Import-Package>
+                            javax.security.cert,
+                            org.slf4j,
+                            org.slf4j.helpers,
+                            org.slf4j.event,
+                            org.xml.sax,
+                            org.w3c.dom,
+                            javax.naming.directory,
+                            javax.naming,
+                            org.osgi.framework,
+                            javax.net.ssl,
+                            javax.xml.parsers,
+                            javax.xml.transform,
+                            javax.management,
+                            javax.xml.transform.sax,
+                            javax.crypto,
+                            javax.security.auth.x500,
+                            javax.crypto.spec
+                        </Import-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
